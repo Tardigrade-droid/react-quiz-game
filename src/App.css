@@ -1,4 +1,4 @@
-*{
+*, *::before, *::after{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -17,4 +17,37 @@ header{
 }
 header h1{
 	text-transform: capitalize;
+	flex-grow: 1;
 }
+.btn{
+	width: 30px;
+	height: 30px;
+}
+.btn span{
+	display: inline-block;
+	background-color: #fff;
+	width: 30px;
+	height: 5px;
+	border-radius: 10px;
+}
+.btn span::before, .btn span::after{
+	content: "";
+	position: absolute;
+        display: inline-block;
+        background-color: #fff;
+        width: 30px;
+        height: 5px;
+        border-radius: 10px;
+}
+.btn span::before{
+	transform: translateY(10px);
+}
+.btn span::after{
+        transform: translateY(-10px);
+}
+.btn.active{
+	background: red;
+}
+
+
+
