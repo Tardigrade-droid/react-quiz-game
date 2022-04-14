@@ -1,3 +1,19 @@
+:root{
+	--primary: #009688;
+	--secondary: #738;
+	--danger: #f00;
+	--success: #0f0;
+	--info: #00f;
+	--dark: #222;
+	--white: #fff;
+	--light: #eee;
+
+	--primary-font: monospace;
+	--secondary-font: cursive;
+}
+
+
+
 *, *::before, *::after{
 	margin: 0;
 	padding: 0;
@@ -6,48 +22,87 @@
 body{
 	font-size: 18px;
 	line-height: 150%;
-	font-family: cursive, sans-serif;
+	font-family: var(--primary-font), sans-serif;
+}
+button{
+	width: 80px;
+	height: 40px;
+	font-size: 20px;
+	font-weight: 400;
+	margin: 3px;
+	padding: 3px 5px;
+	outline: none;
+	border: none;
+	border-radius: 10px;
+	background: var(--light);
 }
 header{
+	height: 60px;
 	display: flex;
 	align-items: center;
-	background: #222;
-	color: #fff;
-	padding: 10px 0;
+	background: var(--white);
+	color: var(--primary);
+	padding: 8px 4px;
 }
 header h1{
+	font-family: var(--secondary-font);
 	text-transform: capitalize;
 	flex-grow: 1;
 }
-.btn{
+.menu-btn{
 	width: 30px;
 	height: 30px;
 }
-.btn span{
+.menu-btn span{
 	display: inline-block;
-	background-color: #fff;
+	background-color: var(--primary);
 	width: 30px;
 	height: 5px;
 	border-radius: 10px;
 }
-.btn span::before, .btn span::after{
+.menu-btn span::before, .menu-btn span::after{
 	content: "";
 	position: absolute;
         display: inline-block;
-        background-color: #fff;
+        background-color: var(--primary);
         width: 30px;
         height: 5px;
         border-radius: 10px;
 }
-.btn span::before{
+.menu-btn span::before{
 	transform: translateY(10px);
 }
-.btn span::after{
+.menu-btn span::after{
         transform: translateY(-10px);
 }
-.btn.active{
-	background: red;
+.menu-btn.active{
+	background: transparent;
 }
-
-
+.hero{
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 100px;
+	background: linear-gradient(39deg, var(--primary), var(--dark));
+	background-blend-mode: multiply;
+	color: var(--white);
+}
+.hero h3{
+	width: 80%;
+	flex-basis: 50%;
+	margin: 0 auto;
+	font-family: var(--primary-font);
+	font-size: 25px;
+	line-height: 90%;
+}
+.btn.white{
+	width: 100px;
+	height: 50px;
+	font-family: inherit;
+	font-size: 20px;
+	font-weight: 800;
+	background: var(--white);
+	color: var(--primary);
+}
 
