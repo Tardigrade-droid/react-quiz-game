@@ -1,6 +1,5 @@
 :root{
 	--primary: #009688;
-	--secondary: #738;
 	--danger: #f00;
 	--success: #0f0;
 	--info: #00f;
@@ -20,9 +19,19 @@
 	box-sizing: border-box;
 }
 body{
+	width: 100vw;
+	min-height: 100vh;
+	overflow-x: hidden;
 	font-size: 18px;
 	line-height: 150%;
 	font-family: var(--primary-font), sans-serif;
+}
+a{
+	text-decoration: none;
+	color: var(--primary);
+}
+li{
+	list-style: none;
 }
 button{
 	width: 80px;
@@ -37,12 +46,13 @@ button{
 	background: var(--light);
 }
 header{
-	height: 60px;
+	height: 55px;
 	display: flex;
 	align-items: center;
 	background: var(--white);
 	color: var(--primary);
 	padding: 8px 4px;
+	position: relative;
 }
 header h1{
 	font-family: var(--secondary-font);
@@ -68,6 +78,8 @@ header h1{
         width: 30px;
         height: 5px;
         border-radius: 10px;
+	transition-property: transform;
+	transition: 200ms ease-in-out;
 }
 .menu-btn span::before{
 	transform: translateY(10px);
@@ -75,8 +87,42 @@ header h1{
 .menu-btn span::after{
         transform: translateY(-10px);
 }
-.menu-btn.active{
+.menu-btn.active span{
 	background: transparent;
+}
+.menu-btn.active span::before{
+	transform: rotate(-45deg);
+}
+.menu-btn.active span::after{
+	transform: rotate(45deg);
+}
+nav{
+        width: 100%;
+        height: 350px;
+        position: absolute;                            top: 56px;
+        right: 0;
+	transform-origin: right;
+	transform: scale(0);
+        background: var(--white);
+	transition: transform 200ms ease-in-out;
+}
+nav.active{
+	transform-origin: right;
+	transform: scale(1);
+}
+nav li{
+	height: 50px;
+	display: flex;
+	align-items: center;
+	padding: 0 10px;
+	border-bottom: 1px solid var(--primary);
+}/*
+nav li:first-child{
+	border-top: 1px solid var(--primary);
+}*/
+nav a{
+	font-size: 20px;
+	font-weight: 500;
 }
 .hero{
 	height: 400px;
@@ -96,7 +142,7 @@ header h1{
 	font-size: 25px;
 	line-height: 90%;
 }
-.btn.white{
+.hero .btn.white{
 	width: 100px;
 	height: 50px;
 	font-family: inherit;
@@ -104,5 +150,14 @@ header h1{
 	font-weight: 800;
 	background: var(--white);
 	color: var(--primary);
+}
+footer{
+	color: var(--white);
+	background: var(--primary);
+}
+.copyright{
+	font-family: var(--secondary-font);
+	font-size: 16px;
+	padding: 15px 10px;
 }
 

@@ -1,12 +1,14 @@
 
 import Header from './components/Header'
-import Hero from "./components/Hero"
+import Footer from './components/Footer'
+import Home from './pages/Home'
 import './App.css';
 
 const App = ()=> {
   return <>
 	<Header/>
-	<Hero/>
+	<Home/>
+	<Footer/>
 	</>
 }
 
