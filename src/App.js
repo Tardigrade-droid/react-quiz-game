@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import SignUp from './pages/SignUp'
 import SignIn from './pages/SignIn'
 import Quiz from './pages/Quiz'
+import QuizEditor from './pages/QuizEditor'
 import './App.css';
 
 const App = ()=> {
@@ -16,6 +17,7 @@ const App = ()=> {
 		<Route path='signup' element={<SignUp/>} />
 		<Route path='login' element={<SignIn/>} />
 		<Route path='quiz' element={<Quiz/>} />
+		<Route path='admin/quizeditor' element={<QuizEditor/>} />
 	</Routes>
 	<Footer/>
 	</BrowserRouter>

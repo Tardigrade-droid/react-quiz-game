@@ -56,6 +56,28 @@ button{
 	border-radius: 10px;
 	background: var(--light);
 }
+#loader{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 50px;
+}
+#loader div{
+	width: 50px;
+	height: 50px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: lightgray;
+	border-top-color: var(--secondary);
+	border-radius: 50%;
+	animation: loader 1s linear infinite;
+}
+@keyframes loader{
+	0%{transform: rotate(0deg);}
+	100%{transform: rotate(360deg);}
+}
 header{
 	height: 55px;
 	display: flex;
@@ -187,19 +209,22 @@ form.sign{
 	background: var(--secondary);
 	color: var(--white);
 }
+.sign input[type='submit']:disabled{
+	filter: grayscale(70%);
+}
 .sign input:focus{
 	outline: blue;
 	border: 2px solid var(--secondary);
 }
 .questions-box{
-	width: calc(100% - var(--pad-side) * 2);
+	width: 85%;
 	margin: 30px auto;
 	padding: 50px 30px;
-	background: var(--white);
-	box-shadow: 1px 1px 10px var(--dark);
+	background: linear-gradient(39deg, var(
+--primary), var(--dark));
 }
 .questions-box h3, .questions-box article{
-	background: red;
+	color: var(--white);
 	width: 100%;
 }
 .questions-box h3{
