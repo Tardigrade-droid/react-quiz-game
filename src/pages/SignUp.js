@@ -1,13 +1,22 @@
 import {useState} from 'react'
+import {useNavigate} from 'react-router-dom'
+import {createUserWithEmailAndPassword} from 'firebase/auth'
+import {auth} from '../firebase/firebase'
 
 const SignUp = ()=>{
 	const [username, setUsername] = useState('')
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
-	function handleSubmit(event){
+	const navigate = useNavigate()
+	async function handleSubmit(event){
 		event.preventDefault()
 		if(!username || !email || !password) return alert('Enter credentials')
-		alert(username + email + password)
+		await createUserWithEmailAndPassword(auth, email, password)
+		setUsername('')
+		setEmail('')
+		setPassword('')
+		navigate('/quiz')
+
 	}
 	return <main className="sign-box">
 		<form className="sign">

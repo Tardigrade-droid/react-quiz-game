@@ -1,5 +1,8 @@
-
+import {useState, useEffect} from 'react'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import {onAuthStateChanged} from 'firebase/auth'
+import {auth} from './firebase/firebase'
+import {userContext} from './contexts/userContext'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -10,7 +13,13 @@ import QuizEditor from './pages/QuizEditor'
 import './App.css';
 
 const App = ()=> {
+	const [user, setUser] = useState(null)
+	useEffect(()=>onAuthStateChanged(auth, user => {
+		setUser(user)
+	}), [])
+
   return <BrowserRouter>
+	<userContext.Provider value={user, setUser}>
 	<Header/>
 	<Routes>
 		<Route path='/' element={<Home/>} />
@@ -20,6 +29,7 @@ const App = ()=> {
 		<Route path='admin/quizeditor' element={<QuizEditor/>} />
 	</Routes>
 	<Footer/>
+	</userContext.Provider>
 	</BrowserRouter>
 }
 
