@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import {useNavigate, Link} from 'react-router-dom'
-import {createUserWithEmailAndPassword} from 'firebase/auth'
+import {createUserWithEmailAndPassword, updateProfile} from 'firebase/auth'
 import {auth} from '../firebase/firebase'
 import Modal from '../components/Modal'
 
@@ -17,6 +17,7 @@ const SignUp = ()=>{
 		try{
 			setIsLoading(true)
 			await createUserWithEmailAndPassword(auth, email, password)
+			await updateProfile(auth.currentUser, {displayName: username})
 			setUsername('')
 			setEmail('')
 			setPassword('')

@@ -8,9 +8,11 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import SignUp from './pages/SignUp'
 import SignIn from './pages/SignIn'
+import ProtectedRoute from './pages/ProtectedRoute'
 import Quiz from './pages/Quiz'
 import QuizEditor from './pages/QuizEditor'
-import './App.css';
+import NotFound from './pages/NotFound'
+import './App.css'
 
 const App = ()=> {
 	const [user, setUser] = useState(null)
@@ -19,14 +21,18 @@ const App = ()=> {
 	}), [])
 
   return <BrowserRouter>
-	<userContext.Provider value={user, setUser}>
+	<userContext.Provider value={user}>
 	<Header/>
 	<Routes>
 		<Route path='/' element={<Home/>} />
 		<Route path='signup' element={<SignUp/>} />
 		<Route path='login' element={<SignIn/>} />
-		<Route path='quiz' element={<Quiz/>} />
+		<Route path='quiz' element={
+			<ProtectedRoute>
+				<Quiz/>
+			</ProtectedRoute> } />
 		<Route path='admin/quizeditor' element={<QuizEditor/>} />
+		<Route path='*' element={<NotFound/>} />
 	</Routes>
 	<Footer/>
 	</userContext.Provider>

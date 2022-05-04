@@ -17,6 +17,7 @@ const Quiz = ()=>{
 		return unsub
 
 	}, [])
+
 	return <main>
 		{isLoading ? <Loading/> : questions?.map((question)=>(
 			<Card question={question.question} answers={question.answers} key={question.id} correct_ans={question.correct_ans} />

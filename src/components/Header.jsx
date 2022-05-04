@@ -14,7 +14,7 @@ const Header = ()=>{
 		<h1>quiz-app</h1>
 		<div className={`menu-btn ${btnState}`} onClick={afficheMenu}><span></span></div>
 
-		<Menu active={btnState}/>
+		<Menu btnState={btnState} setBtnState={setBtnState} />
 		</header>
 }
 

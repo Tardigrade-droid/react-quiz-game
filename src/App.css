@@ -5,6 +5,11 @@
 	--white: #fff;
 	--light: #eee;
 
+	--danger: #d32f2f;
+	--danger-bg: #ef9a9a;
+	--success-bg: #a5d6a7;
+	--success: #388e3c;
+
 	--primary-font: monospace;
 	--secondary-font: cursive;
 	--terciary-font: sans-serif;
@@ -33,6 +38,26 @@ body{
 	display: flex;
         flex-direction: column;
 	background: var(--light);
+}
+.danger{
+	color: var(--danger);
+	background: var(--danger-bg);
+}
+.success{
+	color: var(--success);
+	background: var(--success-bg);
+}
+.modal{
+	padding: 5px 0;
+	border-radius: 5px;
+}
+.not-found{
+	font-family: var(--font-primary);
+	font-size: 30px;
+	color: var(--primary);
+	text-align: center;
+	text-transform: capitalize;
+	padding-top: 30px;
 }
 main{
 	flex-grow: 1;
@@ -86,6 +111,7 @@ header{
 	color: var(--primary);
 	padding: 10px var(--pad-side);
 	position: relative;
+	z-index: 1;
 }
 header h1{
 	font-family: var(--secondary-font);
@@ -95,6 +121,7 @@ header h1{
 .menu-btn{
 	width: 30px;
 	height: 30px;
+	cursor: pointer;
 }
 .menu-btn span{
 	display: inline-block;
@@ -153,6 +180,14 @@ header nav li{
 header nav a{
 	font-size: 20px;
 	font-weight: 500;
+}
+.user a{
+	color: var(--white);
+}
+header nav .user button{
+	padding: 0;
+	background: var(--primary);
+	color: var(--white);
 }
 .hero{
 	height: 400px;
@@ -257,6 +292,9 @@ footer{
 }
 footer nav a{
 	color: var(--light);
+}
+footer nav .user{
+	display: none
 }
 footer section{
 	display: flex
