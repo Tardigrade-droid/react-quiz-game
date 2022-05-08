@@ -14,15 +14,15 @@ const Menu = ({btnState, setBtnState})=>{
 			</li>
 			<li>
 				<i className="fas fa-star"></i>
-				<a href="#">Best score</a>
+				<Link to='best-score'>Best score</Link>
 			</li>
 			<li>
 				<i className="fas fa-share-alt"></i>
-				<a href="#">Invite your friends</a>
+				<Link to='invite'>Invite your friends</Link>
 			</li>
 			<li>
 				<i className="fas fa-address-book"></i>
-				<a href="#">Contact us</a>
+				<Link to='contact'>Contact us</Link>
 			</li>
 			<li><Dashboard /></li>
 		</ul>

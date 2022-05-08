@@ -12,9 +12,9 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig)
-export const db = getFirestore()
+export const db = getFirestore(app)
 export const questRef = collection(db, 'questions')
-export const auth = getAuth()
+export const auth = getAuth(app)
 export const googleProvider = new GoogleAuthProvider()
 
 

@@ -9,7 +9,7 @@ const Modal = ({message, setMessage, type})=>{
 			setMessage('')
 		}, 5000)
 		return show
-	}, [message])
+	}, [message, setMessage])
 
 	return <div ref={modal} className={`modal ${type}`}>
 		<p>{message}</p>
