@@ -3,6 +3,7 @@ import {signInWithEmailAndPassword} from 'firebase/auth'
 import {useNavigate, Link} from 'react-router-dom'
 import {auth} from '../firebase/firebase'
 import Modal from '../components/Modal'
+import GoogleSign from '../components/GoogleSign'
 
 const SignIn = ()=>{
 	const navigate = useNavigate()
@@ -41,6 +42,7 @@ const SignIn = ()=>{
 		<div>
 			<p>dont yet have an account ? <Link to='/signup'>sign up</Link></p>
 		</div>
+		<GoogleSign />
 		</form>
 		</main>
 }

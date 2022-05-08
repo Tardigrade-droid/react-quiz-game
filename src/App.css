@@ -26,9 +26,10 @@
 }
 html{
 	scroll-behavior: smooth;
+	font-size: 62.5%;
 }
 body{
-	font-size: 18px;
+	font-size: 1.8rem;
 	line-height: 150%;
 	font-family: var(--primary-font);
 }
@@ -48,21 +49,28 @@ body{
 	background: var(--success-bg);
 }
 .modal{
-	padding: 5px 0;
-	border-radius: 5px;
+	padding: .5rem 0;
+	border-radius: .5rem;
 }
 .not-found{
 	font-family: var(--font-primary);
-	font-size: 30px;
+	font-size: 3rem;
 	color: var(--primary);
 	text-align: center;
 	text-transform: capitalize;
-	padding-top: 30px;
+	padding-top: 3rem;
+}
+.google-btn button{
+	width: 100%;
+	background: var(--secondary);
+	color: var(--white);
+	border-radius: .5rem;
 }
 main{
 	flex-grow: 1;
 }
 a{
+	cursor: pointer;
 	text-decoration: none;
 	color: var(--primary);
 }
@@ -70,15 +78,15 @@ li{
 	list-style: none;
 }
 button{
-	width: 80px;
-	height: 40px;
-	font-size: 20px;
+	width: 8rem;
+	height: 4rem;
+	font-size: 2rem;
 	font-weight: 400;
-	margin: 3px;
-	padding: 3px 5px;
+	margin: .3rem;
+	padding: .3rem .5rem;
 	outline: none;
 	border: none;
-	border-radius: 10px;
+	border-radius: 1rem;
 	background: var(--light);
 }
 #loader{
@@ -87,12 +95,12 @@ button{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding-top: 50px;
+	padding-top: 5rem;
 }
 #loader div{
-	width: 50px;
-	height: 50px;
-	border-width: 5px;
+	width: 5rem;
+	height: 5rem;
+	border-width: .5rem;
 	border-style: solid;
 	border-color: lightgray;
 	border-top-color: var(--secondary);
@@ -104,12 +112,12 @@ button{
 	100%{transform: rotate(360deg);}
 }
 header{
-	height: 55px;
+	height: 5.5rem;
 	display: flex;
 	align-items: center;
 	background: var(--white);
 	color: var(--primary);
-	padding: 10px var(--pad-side);
+	padding: 1rem var(--pad-side);
 	position: relative;
 	z-index: 1;
 }
@@ -119,33 +127,33 @@ header h1{
 	flex-grow: 1;
 }
 .menu-btn{
-	width: 30px;
-	height: 30px;
+	width: 3rem;
+	height: 3rem;
 	cursor: pointer;
 }
 .menu-btn span{
 	display: inline-block;
 	background-color: var(--primary);
-	width: 30px;
-	height: 5px;
-	border-radius: 10px;
+	width: 3rem;
+	height: .5rem;
+	border-radius: 1rem;
 }
 .menu-btn span::before, .menu-btn span::after{
 	content: "";
 	position: absolute;
         display: inline-block;
         background-color: var(--primary);
-        width: 30px;
-        height: 5px;
-        border-radius: 10px;
+        width: 3rem;
+        height: .5rem;
+        border-radius: 1rem;
 	transition-property: transform;
 	transition: 200ms ease-in-out;
 }
 .menu-btn span::before{
-	transform: translateY(10px);
+	transform: translateY(1rem);
 }
 .menu-btn span::after{
-        transform: translateY(-10px);
+        transform: translateY(-1rem);
 }
 .menu-btn.active span{
 	background: transparent;
@@ -158,8 +166,8 @@ header h1{
 }
 header nav{
         width: 100%;
-        height: 350px;
-        position: absolute;                            top: 56px;
+        height: 35rem;
+        position: absolute;                            top: 5.6rem;
         right: 0;
 	transform-origin: right;
 	transform: scale(0);
@@ -171,14 +179,18 @@ header nav.active{
 	transform: scale(1);
 }
 header nav li{
-	height: 50px;
+	height: 5rem;
 	display: flex;
 	align-items: center;
-	padding: 0 10px;
+	padding: 0 1rem;
 	border-bottom: 1px solid var(--primary);
 }
+nav i{
+	margin-right: 1rem;
+	transform: scale(1.2);
+}
 header nav a{
-	font-size: 20px;
+	font-size: 2rem;
 	font-weight: 500;
 }
 .user a{
@@ -190,11 +202,11 @@ header nav .user button{
 	color: var(--white);
 }
 .hero{
-	height: 400px;
+	height: 40rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding-top: 100px;
+	padding-top: 10rem;
 	background: linear-gradient(39deg, var(--primary), var(--dark));
 	background-blend-mode: multiply;
 	color: var(--white);
@@ -204,30 +216,30 @@ header nav .user button{
 	flex-basis: 50%;
 	margin: 0 auto;
 	font-family: var(--primary-font);
-	font-size: 25px;
+	font-size: 2.5rem;
 	line-height: 90%;
 }
 .hero .btn.white{
-	width: 100px;
-	height: 50px;
+	width: 10rem;
+	height: 5rem;
 	font-family: inherit;
-	font-size: 20px;
+	font-size: 2rem;
 	font-weight: 800;
 	background: var(--white);
 	color: var(--primary);
 }
 .sign-box{
 	background: linear-gradient(39deg, var(--primary), var(--dark));
-	padding: 50px 0;
+	padding: 5rem 0;
 }
 form.sign{
 	width: 85%;
 	background: var(--white);
 	margin: auto;
-	padding: 50px 30px;
+	padding: 5rem 3rem;
 }
 .sign div{
-	margin: 5px 0;
+	margin: .5rem 0;
 }
 .sign div label{
 	color: var(--dark);
@@ -237,10 +249,10 @@ form.sign{
 	width: 100%;
 	border: 1px solid var(--primary);
 	border-radius: 5px;
-	padding: 8px 4px;
+	padding: .8rem .4rem;
 }
 .sign input[type='submit']{
-	font-size: 16px;
+	font-size: 1.6rem;
 	background: var(--secondary);
 	color: var(--white);
 }
@@ -253,8 +265,8 @@ form.sign{
 }
 .questions-box{
 	width: 85%;
-	margin: 30px auto;
-	padding: 50px 30px;
+	margin: 3rem auto;
+	padding: 5rem 3rem;
 	background: linear-gradient(39deg, var(
 --primary), var(--dark));
 }
@@ -263,38 +275,45 @@ form.sign{
 	width: 100%;
 }
 .questions-box h3{
-	font-size: 18px;
+	font-size: 1.8rem;
 	font-weight: 600;
 	font-family: var(--terciary-font);
 }
 .questions-box h3:first-letter{
-	font-size: 25px;
+	font-size: 2.5rem;
 	text-transform: capitalize;
 }
 .questions-box  article{
-	margin: 5px 0;
+	margin: .5rem 0;
 	display: flex;
 	align-items: center;
 }
 .questions-box input[type="radio"]{
 	outline: none;
 	border: none;
-	margin-right: 5px;
+	margin-right: .5rem;
 }
 .questions-box label{
 	flex-grow: 1;
 }
 footer{
 	color: var(--white);
-	font-size: 16px;
+	font-size: 1.6rem;
 	background: var(--secondary);
-	padding: 20px 8px 5px 8px;
+	padding: 1rem .8rem .5rem .8rem;
 }
-footer nav a{
+footer i{
+	font-size: 3rem;
 	color: var(--light);
+	flex-basis: 30%;
+
 }
-footer nav .user{
-	display: none
+.social-icons{
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
 }
 footer section{
 	display: flex
@@ -308,11 +327,86 @@ footer textarea{
 	outline: none;
 	border: none;
 	background: var(--white);
-	padding: 3px;
+	padding: .3rem;
 }
 .copyright{
 	font-family: var(--secondary-font);
 	text-align: center;
-	margin-top: 5px;
+	margin-top: .5rem;
 }
 
+@media all and (min-width: 935px){
+	html{
+		font-size: 90%;
+	}
+	.menu-btn{
+		display: none;
+	}
+	header nav{
+		height: auto;
+		position: relative;
+		top: 0;
+		left: 0;
+		transform: scale(1)
+	}
+	header h1{
+		width: 20rem;
+	}
+	header nav ul{
+		display: flex;
+		justify-content: flex-end;
+	}
+	header nav li{
+		border: none;
+		transition: all 250ms ease-out;
+	}
+	nav li a{
+		display: none;
+	}
+	nav li:nth-child(4) a{
+		font-size: 1.3rem;
+		font-weight: 700;
+	}
+	nav li:last-child a{
+		display: inline;
+	}
+	nav li:hover{
+		width: auto;
+	}
+	nav li:hover a{
+		display: inline;
+	}
+
+	.hero h3{
+		max-width: 600px;
+		text-align: center;
+	}
+
+	.sign{
+		max-width: 500px;
+	}
+
+	.questions-box{
+		max-width: 800px;
+	}
+	.questions-box h3{
+		font-size: 3rem;
+	}
+	.questions-box article{
+		font-size: 2rem;
+	}
+
+	
+	.social-icons{
+		display: block;
+	}
+	.social-icons i{
+		font-size: 5rem;
+		margin-right: 3rem;
+	}
+
+
+	.copyright{
+		font-size: 2rem;
+	}
+}

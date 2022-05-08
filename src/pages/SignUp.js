@@ -3,6 +3,7 @@ import {useNavigate, Link} from 'react-router-dom'
 import {createUserWithEmailAndPassword, updateProfile} from 'firebase/auth'
 import {auth} from '../firebase/firebase'
 import Modal from '../components/Modal'
+import GoogleSign from '../components/GoogleSign'
 
 const SignUp = ()=>{
 	const [username, setUsername] = useState('')
@@ -49,6 +50,7 @@ const SignUp = ()=>{
 		<div>
 		<p>already have an account ? <Link to='/login'>login</Link></p>
 		</div>
+		<GoogleSign />
 
 		</form>
 		</main>
